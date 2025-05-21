@@ -28,7 +28,7 @@ fn main() {
         
         let secret_number = rand::thread_rng().gen_range(1, 101);
 
-       'inner_loop: loop {
+       loop {
             let mut user_guess = String::new();
             
             io::stdin()
@@ -45,7 +45,7 @@ fn main() {
                 Ordering::Greater => println!("Too big!"),
                 Ordering::Equal =>{
                      println!("You guessed it, the number is {}", secret_number);
-                     break 'inner_loop;
+                     break;
                     },
             }
             
